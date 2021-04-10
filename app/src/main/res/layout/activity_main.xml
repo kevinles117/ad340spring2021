@@ -19,8 +19,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nameAndDate"
-        android:id="@+id/nameAndDate"
+        android:text="@string/name_and_date"
+        android:id="@+id/name_and_date_id"
         app:layout_constraintBottom_toBottomOf="@id/textViewText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="@string/button_text"
         android:onClick="sendMessage"
+        android:id="@+id/toast_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

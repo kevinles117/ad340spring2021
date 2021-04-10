@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -23,7 +24,12 @@ public class MainActivityTest {
     public void hasTextOnScreen() {
         onView(withId(R.id.textViewText))
                 .check(matches(withText(R.string.hello_world)));
-        onView(withId(R.id.nameAndDate))
-                .check(matches(withText(R.string.nameAndDate)));
+        onView(withId(R.id.name_and_date_id))
+                .check(matches(withText(R.string.name_and_date)));
+    }
+
+    @Test
+    public void hasToastOnButtonPress() {
+        onView(withId(R.id.toast_button)).perform(click());
     }
 }
