@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="nameAndDate">Le, Kevin 4/9/2021</string>
+    <string name="button_text">Do Not Press This Button</string>
+    <string name="toast_text">Why did you press the button??</string>
+</resources>
