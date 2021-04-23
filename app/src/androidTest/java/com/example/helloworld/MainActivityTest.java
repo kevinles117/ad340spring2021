@@ -22,14 +22,7 @@ public class MainActivityTest {
 
     @Test
     public void hasTextOnScreen() {
-        onView(withId(R.id.textViewText))
-                .check(matches(withText(R.string.hello_world)));
         onView(withId(R.id.name_and_date_id))
-                .check(matches(withText(R.string.name_and_date)));
-    }
-
-    @Test
-    public void hasToastOnButtonPress() {
-        onView(withId(R.id.toast_button)).perform(click());
+                .check(matches(withText(R.string.name_and_date_string)));
     }
 }

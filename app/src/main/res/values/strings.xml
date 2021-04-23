@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">HelloWorld</string>
-    <string name="hello_world">Hello World!</string>
-    <string name="name_and_date">Le, Kevin 4/9/2021</string>
-    <string name="button_text">Do Not Press This Button</string>
-    <string name="toast_text">Why did you press the button??</string>
+    <string name="app_name">Hello World</string>
+    <string name="name_and_date_string">Le, Kevin 4/16/2021</string>
+    <string name="full_name_string">Full Name</string>
+    <string name="email_address_string">Email Address</string>
+    <string name="username_string">Username</string>
+    <string name="sign_up_string">Sign Up</string>
+    <string name="birth_date_string">Enter Your Birth Date</string>
+    <string name="back_button_string">Back</string>
 </resources>
