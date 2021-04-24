@@ -1,0 +1,2 @@
+[![CircleCI](https://circleci.com/gh/kevinles117/ad340spring2021.svg?style=svg)](https://app.circleci.com/pipelines/github/kevinles117/ad340spring2021)
+[![codecov](https://codecov.io/gh/kevinles117/ad340spring2021/branch/main/graph/badge.svg?token=9PQO8GLHES)](https://codecov.io/gh/kevinles117/ad340spring2021)
