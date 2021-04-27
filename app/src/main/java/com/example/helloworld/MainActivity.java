@@ -100,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        if(age < 18) {
+            Toast toast = Toast.makeText(getApplicationContext(), "You are not old enough to sign up", Toast.LENGTH_LONG);
+            toast.show();
+            return;
+        }
+
         Intent intent = new Intent(this, SignUpActivity.class);
         intent.putExtra("Username", username);
         startActivity(intent);
