@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld"
         android:requestLegacyExternalStorage="true">
-        <activity android:name=".SignUpActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".SignUpActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"></activity>
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
