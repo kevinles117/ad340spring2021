@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Clicking the EditText for the Birth Date line will open a calendar dialog
+
         birthDateText = (EditText) findViewById(R.id.birth_date);
         birthDateText.setInputType(InputType.TYPE_NULL);
         birthDateText.setOnClickListener(new View.OnClickListener() {
@@ -60,16 +62,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Clears the form fields when returning to the MainActivity screen
     @Override
     protected void onResume() {
         super.onResume();
-//        nameEditText.setText("");
-//        emailEditText.setText("");
-//        usernameEditText.setText("");
+        nameEditText = (EditText) findViewById(R.id.name);
+        nameEditText.setText("");
+        emailEditText = (EditText) findViewById(R.id.email);
+        emailEditText.setText("");
+        usernameEditText = (EditText) findViewById(R.id.username);
+        usernameEditText.setText("");
+        birthDateText = (EditText) findViewById(R.id.birth_date);
+        birthDateText.setText("");
     }
 
+    // When clicking the sign up button, makes sure all the fields have something in them before
+    // letting the user go to the next activity
     public void signUpButtonHandler(View view) {
-
         nameEditText = (EditText) findViewById(R.id.name);
         name = nameEditText.getText().toString();
         Log.i(TAG, "Name: " + name);
@@ -96,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Calculates the age using a date and today's date
     public int getAge(int year, int month, int dayOfMonth) {
         return Period.between(LocalDate.of(year, month, dayOfMonth), LocalDate.now()).getYears();
     }
