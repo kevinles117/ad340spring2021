@@ -8,4 +8,5 @@
     <string name="birth_date_string">Enter Your Birth Date</string>
     <string name="back_button_string">Back</string>
     <string name="sign_up_message">Thanks for Signing Up\u0020</string>
+    <string name="pfp_string">Profile Picture</string>
 </resources>

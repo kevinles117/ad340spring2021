@@ -9,25 +9,35 @@ import android.view.View;
 import android.widget.TextView;
 
 public class SignUpActivity extends AppCompatActivity {
-    String msg;
-    TextView textView;
+    String name;
+    TextView nameTextView;
+    String occupation;
+    TextView occupationTextView;
+    int age;
+    String desc;
+    TextView descriptionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        // Sets up welcome_text TextView
-        textView = findViewById(R.id.welcome_text);
+        // Sets up the TextViews
+        nameTextView = findViewById(R.id.name_text);
+        occupationTextView = findViewById(R.id.occupation_text);
+        descriptionTextView = findViewById(R.id.description_text);
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
-        if(b.containsKey("Username")) {
-            String username = b.getString("Username");
-            msg = getString(R.string.sign_up_message) + username + "!";
+        if(b.containsKey("Name") && b.containsKey("Description") && b.containsKey("Occupation") && b.containsKey("Age")) {
+            name = b.getString("Name");
+            occupation = b.getString("Occupation");
+            age = b.getInt("Age");
+            desc = b.getString("Description");
         }
-
-        textView.setText(msg);
+        nameTextView.setText(name + ", " + age);
+        occupationTextView.setText(occupation);
+        descriptionTextView.setText(desc);
     }
 
     @Override
@@ -36,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         // Sets the message in case of screen rotation
         if (savedInstanceState.containsKey("Username")) {
-            textView.setText((String)savedInstanceState.get("message"));
+            descriptionTextView.setText((String)savedInstanceState.get("message"));
         }
     }
 
@@ -45,10 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         // Saves the message in case of screen rotation
-        outState.putString("message", textView.getText().toString());
-    }
+        outState.putString("message", descriptionTextView.getText().toString());
 
-    public void backButtonHandler(View view) {
-        finish();
     }
 }

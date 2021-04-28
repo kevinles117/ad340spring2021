@@ -48,19 +48,6 @@
             app:layout_constraintTop_toTopOf="@+id/name" />
 
         <EditText
-            android:id="@+id/description"
-            style="@style/editTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:ems="12"
-            android:hint="@string/description_string"
-            android:imeOptions="actionDone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/birth_date" />
-
-        <EditText
             android:id="@+id/occupation"
             style="@style/editTextStyle"
             android:layout_width="wrap_content"
@@ -71,7 +58,24 @@
             android:imeOptions="actionDone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/description" />
+            app:layout_constraintTop_toTopOf="@+id/birth_date" />
+
+        <EditText
+            android:id="@+id/description"
+            style="@style/editTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="60dp"
+            android:gravity="top|left"
+            android:ems="12"
+            android:lines="5"
+            android:maxLines="5"
+            android:hint="@string/description_string"
+            android:imeOptions="actionDone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/occupation" />
 
         <Button
             android:id="@+id/sign_up_button"
@@ -84,7 +88,7 @@
             android:text="@string/sign_up_string"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/occupation"/>
+            app:layout_constraintTop_toTopOf="@+id/description"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

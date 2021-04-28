@@ -107,7 +107,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(this, SignUpActivity.class);
-        intent.putExtra("Username", occupation);
+        intent.putExtra("Name", name);
+        intent.putExtra("Age", age);
+        intent.putExtra("Description", description);
+        intent.putExtra("Occupation", occupation);
         startActivity(intent);
     }
 
