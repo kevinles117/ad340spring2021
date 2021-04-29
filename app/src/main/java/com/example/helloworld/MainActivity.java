@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     String email;
     String username;
     int age;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     Button getButton;
 
     @Override
@@ -96,6 +97,12 @@ public class MainActivity extends AppCompatActivity {
                 (email != null && email.trim().isEmpty()) ||
                 (username != null && username.trim().isEmpty()) ) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please fill out all forms", Toast.LENGTH_LONG);
+            toast.show();
+            return;
+        }
+
+        if(!email.trim().matches(emailPattern)) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Email is not valid", Toast.LENGTH_LONG);
             toast.show();
             return;
         }
