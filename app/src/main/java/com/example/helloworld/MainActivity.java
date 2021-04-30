@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,9 +17,11 @@ import android.widget.Toast;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Calendar;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
+    public static final Pattern EMAIL_ADDRESS = Patterns.EMAIL_ADDRESS;
 
     DatePickerDialog datePicker;
     EditText birthDateText;
@@ -29,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     String email;
     String username;
     int age;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     Button getButton;
 
     @Override
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if(!email.trim().matches(emailPattern)) {
+        if(!email.trim().matches(EMAIL_ADDRESS.toString())) {
             Toast toast = Toast.makeText(getApplicationContext(), "Email is not valid", Toast.LENGTH_LONG);
             toast.show();
             return;
