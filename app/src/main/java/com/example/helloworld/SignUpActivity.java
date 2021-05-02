@@ -45,8 +45,16 @@ public class SignUpActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
 
         // Sets the message in case of screen rotation
-        if (savedInstanceState.containsKey("Username")) {
-            descriptionTextView.setText((String)savedInstanceState.get("message"));
+        if (savedInstanceState.containsKey("Name")) {
+            nameTextView.setText((String)savedInstanceState.get("Name"));
+        }
+
+        if (savedInstanceState.containsKey("Occupation")) {
+            occupationTextView.setText((String)savedInstanceState.get("Occupation"));
+        }
+
+        if (savedInstanceState.containsKey("Description")) {
+            descriptionTextView.setText((String)savedInstanceState.get("Description"));
         }
     }
 
@@ -55,7 +63,8 @@ public class SignUpActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         // Saves the message in case of screen rotation
-        outState.putString("message", descriptionTextView.getText().toString());
-
+        outState.putString("Name", nameTextView.getText().toString());
+        outState.putString("Occupation", occupationTextView.getText().toString());
+        outState.putString("Description", descriptionTextView.getText().toString());
     }
 }

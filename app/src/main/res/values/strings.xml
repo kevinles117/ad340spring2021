@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Hello World</string>
-    <string name="name_and_date_string">Le, Kevin 4/16/2021</string>
+    <string name="name_and_date_string">Le, Kevin 4/27/2021</string>
     <string name="full_name_string">Full Name</string>
     <string name="description_string">Describe Yourself!</string>
     <string name="occupation_string">Occupation</string>
