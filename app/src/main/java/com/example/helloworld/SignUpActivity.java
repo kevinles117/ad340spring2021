@@ -44,7 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
         ProfileFragment profileFragment = new ProfileFragment();
         FragmentManager manager = getFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.linearLayout, profileFragment, "profileFragment");
+//        transaction.add(R.id.linearLayout, profileFragment, "profileFragment");
         transaction.commit();
     }
 
