@@ -3,6 +3,8 @@ package com.example.helloworld;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +40,12 @@ public class SignUpActivity extends AppCompatActivity {
         nameTextView.setText(name + ", " + age);
         occupationTextView.setText(occupation);
         descriptionTextView.setText(desc);
+
+        ProfileFragment profileFragment = new ProfileFragment();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.linearLayout, profileFragment, "profileFragment");
+        transaction.commit();
     }
 
     @Override
