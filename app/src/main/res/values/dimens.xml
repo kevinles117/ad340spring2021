@@ -15,4 +15,6 @@
     <dimen name="occupationPaddingBottom">15dp</dimen>
     <dimen name="descriptionTextSize">20sp</dimen>
     <dimen name="descriptionPaddingLeft">20dp</dimen>
+    <dimen name="layoutWidthEditText">250dp</dimen>
+    <dimen name="layoutWidthButton">150dp</dimen>
 </resources>
