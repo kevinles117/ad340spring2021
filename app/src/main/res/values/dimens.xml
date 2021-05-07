@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginTopEditText">60dp</dimen>
+    <dimen name="marginScreenTop">200dp</dimen>
+    <dimen name="buttonMarginTop">150dp</dimen>
+    <dimen name="marginNameAndDate">30dp</dimen>
+    <dimen name="imageHeight">400dp</dimen>
+    <dimen name="imagePadding">20dp</dimen>
+    <dimen name="nameTextSize">30sp</dimen>
+    <dimen name="namePaddingTop">20dp</dimen>
+    <dimen name="namePaddingLeft">20dp</dimen>
+    <dimen name="namePaddingBottom">10dp</dimen>
+    <dimen name="occupationTextSize">18sp</dimen>
+    <dimen name="occupationPaddingLeft">20dp</dimen>
+    <dimen name="occupationPaddingBottom">15dp</dimen>
+    <dimen name="descriptionTextSize">20sp</dimen>
+    <dimen name="descriptionPaddingLeft">20dp</dimen>
+    <dimen name="layoutWidthEditText">250dp</dimen>
+    <dimen name="layoutWidthButton">150dp</dimen>
+</resources>

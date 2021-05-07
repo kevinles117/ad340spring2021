@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
     DatePickerDialog datePicker;
     EditText birthDateText;
     EditText nameEditText;
-    EditText emailEditText;
-    EditText usernameEditText;
+    EditText descriptionEditText;
+    EditText occupationEditText;
     String name;
-    String email;
-    String username;
+    String description;
+    String occupation;
     int age;
     Button getButton;
 
@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         nameEditText = (EditText) findViewById(R.id.name);
         nameEditText.setText("");
-        emailEditText = (EditText) findViewById(R.id.email);
-        emailEditText.setText("");
-        usernameEditText = (EditText) findViewById(R.id.username);
-        usernameEditText.setText("");
+        descriptionEditText = (EditText) findViewById(R.id.description);
+        descriptionEditText.setText("");
+        occupationEditText = (EditText) findViewById(R.id.occupation);
+        occupationEditText.setText("");
         birthDateText = (EditText) findViewById(R.id.birth_date);
         birthDateText.setText("");
     }
@@ -83,18 +83,18 @@ public class MainActivity extends AppCompatActivity {
         name = nameEditText.getText().toString();
         Log.i(TAG, "Name: " + name);
 
-        emailEditText = (EditText) findViewById(R.id.email);
-        email = emailEditText.getText().toString();
-        Log.i(TAG,"Email: " + email);
+        descriptionEditText = (EditText) findViewById(R.id.description);
+        description = descriptionEditText.getText().toString();
+        Log.i(TAG,"Description: " + description);
 
-        usernameEditText = (EditText) findViewById(R.id.username);
-        username = usernameEditText.getText().toString();
-        Log.i(TAG ,"Username: " + username);
+        occupationEditText = (EditText) findViewById(R.id.occupation);
+        occupation = occupationEditText.getText().toString();
+        Log.i(TAG ,"Occupation: " + occupation);
 
         if(
                 (name != null && name.trim().isEmpty()) ||
-                (email != null && email.trim().isEmpty()) ||
-                (username != null && username.trim().isEmpty()) ) {
+                (description != null && description.trim().isEmpty()) ||
+                (occupation != null && occupation.trim().isEmpty()) ) {
             Toast toast = Toast.makeText(getApplicationContext(), "Please fill out all forms", Toast.LENGTH_LONG);
             toast.show();
             return;
@@ -107,7 +107,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(this, SignUpActivity.class);
-        intent.putExtra("Username", username);
+        intent.putExtra("Name", name);
+        intent.putExtra("Age", age);
+        intent.putExtra("Description", description);
+        intent.putExtra("Occupation", occupation);
         startActivity(intent);
     }
 

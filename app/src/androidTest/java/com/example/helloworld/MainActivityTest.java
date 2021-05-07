@@ -39,10 +39,10 @@ public class MainActivityTest {
         onView(withId(R.id.name))
                 .perform(typeText("Kevin"))
                 .check(matches(withText("Kevin")));
-        onView(withId(R.id.email))
+        onView(withId(R.id.description))
                 .perform(typeText("k@gmail.com"))
                 .check(matches(withText("k@gmail.com")));
-        onView(withId(R.id.username))
+        onView(withId(R.id.occupation))
                 .perform(typeText("kevin.le"))
                 .check(matches(withText("kevin.le")));
     }
@@ -59,9 +59,9 @@ public class MainActivityTest {
     public void validateSignUp() {
         onView(withId(R.id.name))
                 .perform(typeText("Kevin"));
-        onView(withId(R.id.email))
+        onView(withId(R.id.description))
                 .perform(typeText("k@gmail.com"));
-        onView(withId(R.id.username))
+        onView(withId(R.id.occupation))
                 .perform(typeText("kevin.le"));
         onView(withId(R.id.birth_date))
                 .perform(click());

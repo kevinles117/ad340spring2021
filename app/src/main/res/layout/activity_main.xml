@@ -10,12 +10,11 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-
         <TextView
             android:id="@+id/name_and_date_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/marginNameAndDate"
             android:text="@string/name_and_date_string"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -24,10 +23,9 @@
         <EditText
             android:id="@+id/name"
             style="@style/editTextStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/layoutWidthEditText"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:ems="12"
+            android:layout_marginTop="@dimen/marginScreenTop"
             android:hint="@string/full_name_string"
             android:imeOptions="actionDone"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,56 +33,56 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/email"
-            style="@style/editTextStyle"
-            android:layout_width="wrap_content"
+            android:id="@+id/birth_date"
+            android:layout_width="@dimen/layoutWidthEditText"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:ems="12"
-            android:hint="@string/email_address_string"
+            android:layout_marginTop="@dimen/marginTopEditText"
+            android:focusable="false"
+            android:hint="@string/birth_date_string"
             android:imeOptions="actionDone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/name" />
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/occupation"
             style="@style/editTextStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/layoutWidthEditText"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:ems="12"
-            android:hint="@string/username_string"
+            android:layout_marginTop="@dimen/marginTopEditText"
+            android:hint="@string/occupation_string"
             android:imeOptions="actionDone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/email" />
+            app:layout_constraintTop_toTopOf="@+id/birth_date" />
 
         <EditText
-            android:id="@+id/birth_date"
-            android:layout_width="wrap_content"
+            android:id="@+id/description"
+            style="@style/editTextStyle"
+            android:layout_width="@dimen/layoutWidthEditText"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:ems="12"
-            android:focusable="false"
-            android:hint="@string/birth_date_string"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="@dimen/marginTopEditText"
+            android:gravity="top|left"
+            android:lines="5"
+            android:maxLines="5"
+            android:hint="@string/description_string"
             android:imeOptions="actionDone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/username" />
+            app:layout_constraintTop_toTopOf="@+id/occupation" />
 
         <Button
             android:id="@+id/sign_up_button"
             android:backgroundTint="@color/teal_700"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/layoutWidthButton"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="@dimen/buttonMarginTop"
             android:onClick="signUpButtonHandler"
-            android:ems="9"
             android:text="@string/sign_up_string"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/birth_date"/>
+            app:layout_constraintTop_toTopOf="@+id/description"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
