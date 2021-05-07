@@ -3,7 +3,7 @@
     <dimen name="marginTopEditText">60dp</dimen>
     <dimen name="marginScreenTop">200dp</dimen>
     <dimen name="buttonMarginTop">150dp</dimen>
-    <dimen name="marginNameAndDate">10dp</dimen>
+    <dimen name="marginNameAndDate">30dp</dimen>
     <dimen name="imageHeight">400dp</dimen>
     <dimen name="imagePadding">20dp</dimen>
     <dimen name="nameTextSize">30sp</dimen>
