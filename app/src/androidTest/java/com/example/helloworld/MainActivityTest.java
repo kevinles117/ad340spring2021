@@ -37,14 +37,14 @@ public class MainActivityTest {
     @Test
     public void validateEditText() {
         onView(withId(R.id.name))
-                .perform(typeText("Kevin"))
-                .check(matches(withText("Kevin")));
+                .perform(typeText("Kevin Le"))
+                .check(matches(withText("Kevin Le")));
         onView(withId(R.id.description))
-                .perform(typeText("k@gmail.com"))
-                .check(matches(withText("k@gmail.com")));
+                .perform(typeText("Hello! This is the description."))
+                .check(matches(withText("Hello! This is the description.")));
         onView(withId(R.id.occupation))
-                .perform(typeText("kevin.le"))
-                .check(matches(withText("kevin.le")));
+                .perform(typeText("Student"))
+                .check(matches(withText("Student")));
     }
 
     @Test
@@ -60,9 +60,9 @@ public class MainActivityTest {
         onView(withId(R.id.name))
                 .perform(typeText("Kevin"));
         onView(withId(R.id.description))
-                .perform(typeText("k@gmail.com"));
+                .perform(typeText("Hello! This is the description."));
         onView(withId(R.id.occupation))
-                .perform(typeText("kevin.le"));
+                .perform(typeText("Student"));
         onView(withId(R.id.birth_date))
                 .perform(click());
         onView(withClassName(Matchers.equalTo(android.widget.DatePicker.class.getName())))
