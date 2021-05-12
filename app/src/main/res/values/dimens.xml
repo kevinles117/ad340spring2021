@@ -17,4 +17,8 @@
     <dimen name="descriptionPaddingLeft">20dp</dimen>
     <dimen name="layoutWidthEditText">250dp</dimen>
     <dimen name="layoutWidthButton">150dp</dimen>
+    <dimen name="nestedScrollViewMarginTop">56dp</dimen>
+    <dimen name="matchImageDim">150dp</dimen>
+    <dimen name="linearLayoutPaddingCard">16dp</dimen>
+    <dimen name="textSizeName">18sp</dimen>
 </resources>
