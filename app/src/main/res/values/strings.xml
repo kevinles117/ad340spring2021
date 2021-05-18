@@ -11,4 +11,6 @@
     <string name="pfp_string">Profile Picture</string>
     <string name="navigation_drawer_open">navigation drawer open</string>
     <string name="navigation_drawer_close">navigation drawer closed</string>
+    <string name="like_button_string">Like</string>
+    <string name="profile_picture_string">Profile Picture</string>
 </resources>

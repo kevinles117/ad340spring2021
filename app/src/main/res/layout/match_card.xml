@@ -1,36 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@android:color/white"
-    app:cardElevation="2dp"
+    app:cardElevation="@dimen/cardElevation"
     app:cardPreventCornerOverlap="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/paddingMatchCard">
 
         <ImageView
             android:id="@+id/match_image"
             android:src="@drawable/default_pfp"
             android:layout_width="@dimen/matchImageDim"
-            android:layout_height="@dimen/matchImageDim" />
+            android:layout_height="@dimen/matchImageDim"
+            android:contentDescription="@string/profile_picture_string"
+            android:layout_marginBottom="@dimen/layoutMarginBottomPfp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/linearLayoutPaddingCard">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/match_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="@dimen/textSizeName"/>
+                android:textSize="@dimen/textSizeName"
+                android:layout_marginBottom="@dimen/layoutMarginBottomName"/>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/like_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/like_button_string"
+                android:layout_marginStart="@dimen/layoutMarginStartButton"/>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -28,7 +28,7 @@ public class MatchesFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
-        MatchesCardRecyclerViewAdapter adapter = new MatchesCardRecyclerViewAdapter( nameList);
+        MatchesCardRecyclerViewAdapter adapter = new MatchesCardRecyclerViewAdapter(nameList);
         recyclerView.setAdapter(adapter);
 
         return view;
