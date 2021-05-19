@@ -71,35 +71,6 @@ public class SignUpActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-//    @Override
-//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        super.onRestoreInstanceState(savedInstanceState);
-//
-//        // Sets the message in case of screen rotation
-//        if (savedInstanceState.containsKey("Name")) {
-//            nameTextView.setText((String)savedInstanceState.get("Name"));
-//        }
-//
-//        if (savedInstanceState.containsKey("Occupation")) {
-//            occupationTextView.setText((String)savedInstanceState.get("Occupation"));
-//        }
-//
-//        if (savedInstanceState.containsKey("Description")) {
-//            descriptionTextView.setText((String)savedInstanceState.get("Description"));
-//        }
-//    }
-//
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//
-//        // Saves the message in case of screen rotation
-//        outState.putString("Name", nameTextView.getText().toString());
-//        outState.putString("Occupation", occupationTextView.getText().toString());
-//        outState.putString("Description", descriptionTextView.getText().toString());
-//    }
-
     @Override
     public void onBackPressed(){
         if(drawer.isDrawerOpen(GravityCompat.START)){
