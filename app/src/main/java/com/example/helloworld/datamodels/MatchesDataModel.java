@@ -39,9 +39,13 @@ public class MatchesDataModel {
         listeners.add(listener);
     }
 
-    public void updateMatches(MatchesModel match) {
+    public void updateMatchesById(MatchesModel match) {
         DocumentReference matchesRef = db.collection("matches").document(match.uid);
         Map<String, Object> data = new HashMap<>();
+        data.put("name", match.name);
+        data.put("imageUrl", match.imageUrl);
+        data.put("latitude", match.latitude);
+        data.put("longitude", match.longitude);
         data.put("liked", match.liked);
         matchesRef.update(data);
     }

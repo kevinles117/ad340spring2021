@@ -38,7 +38,7 @@ public class MatchesViewModel {
     }
 
     public void updateMatches(MatchesModel match) {
-        matchesDataModel.updateMatches(match);
+        matchesDataModel.updateMatchesById(match);
     }
 
     public void clear() {
