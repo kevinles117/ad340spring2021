@@ -12,12 +12,20 @@ import java.util.Map;
 @IgnoreExtraProperties
 public class MatchesModel implements Parcelable {
     public String uid;
+    public String name;
+    public String imageUrl;
+    public int latitude;
+    public int longitude;
     public boolean liked;
 
     public MatchesModel(){
     }
 
-    public MatchesModel(boolean liked) {
+    public MatchesModel(String name, String imageUrl, int latitude, int longitude, boolean liked) {
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.liked = liked;
     }
 
@@ -41,6 +49,10 @@ public class MatchesModel implements Parcelable {
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
+        result.put("name", name);
+        result.put("imageUrl", imageUrl);
+        result.put("latitude", latitude);
+        result.put("longitude", longitude);
         result.put("liked", liked);
         return result;
     }
@@ -52,6 +64,11 @@ public class MatchesModel implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(uid);
+        dest.writeString(name);
+        dest.writeString(imageUrl);
+        dest.writeInt(latitude);
+        dest.writeInt(longitude);
         dest.writeByte((byte) (liked ? 1 : 0));
     }
 }
