@@ -15,7 +15,6 @@
 
         <ImageView
             android:id="@+id/match_image"
-            android:src="@drawable/default_pfp"
             android:layout_width="@dimen/matchImageDim"
             android:layout_height="@dimen/matchImageDim"
             android:contentDescription="@string/profile_picture_string"
@@ -45,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/like_button_string"
-                android:layout_marginStart="@dimen/layoutMarginStartButton"/>
+/>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -20,7 +20,7 @@
     <dimen name="nestedScrollViewMarginTop">56dp</dimen>
     <dimen name="matchImageDim">150dp</dimen>
     <dimen name="linearLayoutPaddingCard">16dp</dimen>
-    <dimen name="textSizeName">14sp</dimen>
+    <dimen name="textSizeName">10sp</dimen>
     <dimen name="paddingMatchCard">15dp</dimen>
     <dimen name="layoutMarginStartButton">30dp</dimen>
     <dimen name="layoutMarginBottomName">15dp</dimen>

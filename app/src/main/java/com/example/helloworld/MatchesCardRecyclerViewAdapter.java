@@ -39,18 +39,13 @@ public class MatchesCardRecyclerViewAdapter extends RecyclerView.Adapter<Matches
     @Override
     public void onBindViewHolder(@NonNull MatchesCardViewHolder holder, int position) {
         holder.matches = matches.get(position);
-        holder.matchName.setText(matches.get(position).name);
-        Picasso.with(likeButton.getContext())
-            .load(matches.get(position).imageUrl)
-                .resize(R.dimen.matchImageDim, R.dimen.matchImageDim).into(holder.matchImage);
-//        if (matches != null && position < matches.size()) {
-//            String name = matches.get(position);
-//            holder.matchName.setText(name);
+        holder.matchName.setText((matches.get(position).name));
+        Picasso.get().load(matches.get(position).imageUrl).fit().into(holder.matchImage);
 
         likeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(likeButton.getContext(), "You liked " + holder.matchName, Toast.LENGTH_SHORT).show();
+                Toast.makeText(likeButton.getContext(), "You liked " + matches.get(position).name, Toast.LENGTH_SHORT).show();
             }
         });
     }

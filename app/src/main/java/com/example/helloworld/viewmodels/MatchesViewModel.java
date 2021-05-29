@@ -1,5 +1,7 @@
 package com.example.helloworld.viewmodels;
 
+import android.util.Log;
+
 import com.example.helloworld.datamodels.MatchesDataModel;
 import com.example.helloworld.models.MatchesModel;
 import com.google.firebase.firestore.DocumentSnapshot;

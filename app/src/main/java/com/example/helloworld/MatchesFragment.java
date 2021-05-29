@@ -2,7 +2,6 @@ package com.example.helloworld;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,15 +17,12 @@ import com.example.helloworld.models.MatchesModel;
 import com.example.helloworld.viewmodels.MatchesViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MatchesFragment extends Fragment {
     private int colCount = 3;
-    private ArrayList<MatchesModel> matches;
+    private ArrayList<MatchesModel> matches = new ArrayList<>();
     private OnListFragmentInteractionListener listener;
-    static final String ARG_DATA_SET = "data-set";
     private MatchesViewModel viewModel;
-//    private List<String> nameList = new ArrayList<String>();
 
     public MatchesFragment() {
     }
@@ -34,32 +30,24 @@ public class MatchesFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        matches = new ArrayList<>();
-
-        viewModel = new MatchesViewModel();
-        viewModel.getMatches(
-                (dbMatches) -> {
-                    matches = dbMatches;
-                });
-//        if (getArguments() != null) {
-//            matches = getArguments().getParcelableArrayList(ARG_DATA_SET);
-//        }
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
 
-//        nameList.add("Elmo");
-//        nameList.add("Cookie Monster");
-
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), colCount));
-        recyclerView.setAdapter(new MatchesCardRecyclerViewAdapter(matches, listener));
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
-//        MatchesCardRecyclerViewAdapter adapter = new MatchesCardRecyclerViewAdapter(matches);
+        MatchesCardRecyclerViewAdapter adapter = new MatchesCardRecyclerViewAdapter(matches, listener);
+        recyclerView.setAdapter(adapter);
+        viewModel = new MatchesViewModel();
+        viewModel.getMatches(
+                (ArrayList<MatchesModel> dbMatches) -> {
+                    matches = dbMatches;
+                    MatchesCardRecyclerViewAdapter mAdapter = new MatchesCardRecyclerViewAdapter(matches, listener);
+                    recyclerView.setAdapter(mAdapter);
+                    mAdapter.notifyDataSetChanged();
+                });
         return view;
     }
 
