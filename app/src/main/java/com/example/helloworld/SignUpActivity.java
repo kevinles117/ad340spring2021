@@ -12,34 +12,22 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.FieldClassification;
-import android.view.Gravity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.helloworld.models.MatchesModel;
 import com.example.helloworld.viewmodels.MatchesViewModel;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-
-import static com.example.helloworld.MatchesFragment.ARG_DATA_SET;
-
 public class SignUpActivity extends AppCompatActivity implements MatchesFragment.OnListFragmentInteractionListener{
     String name;
-    TextView nameTextView;
     String occupation;
-    TextView occupationTextView;
     int age;
     String desc;
-    TextView descriptionTextView;
     private FragmentManager manager;
     private DrawerLayout drawer;
     private Toolbar toolbar;
-    private Menu menu;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
     private MatchesViewModel viewModel;
@@ -98,16 +86,6 @@ public class SignUpActivity extends AppCompatActivity implements MatchesFragment
             case R.id.nav_profile:
                 break;
             case R.id.nav_matches:
-//                viewModel = new MatchesViewModel();
-//                viewModel.getMatches(
-//                        (ArrayList<MatchesModel> matches) -> {
-//                            Bundle bundle = new Bundle();
-//                            bundle.putParcelableArrayList(ARG_DATA_SET, matches);
-//
-//                            MatchesFragment matchesFragment = new MatchesFragment();
-//                            matchesFragment.setArguments(bundle);
-//                        }
-//                );
                 fragment = new MatchesFragment();
                 break;
             case R.id.nav_settings:
@@ -121,25 +99,11 @@ public class SignUpActivity extends AppCompatActivity implements MatchesFragment
         return true;
     }
 
-//    @Override
-//    protected void onPause() {
-//        viewModel.clear();
-//        super.onPause();
-//    }
-//
     @Override
     public void onListFragmentInteraction(MatchesModel match) {
         match.liked = true;
         viewModel.updateMatches(match);
     }
-//
-//    public MatchesViewModel getViewModel() {
-//        return viewModel;
-//    }
-//
-//    public void setViewModel(MatchesViewModel vm) {
-//        viewModel = vm;
-//    }
 
     public static class Profile {
         String name;
