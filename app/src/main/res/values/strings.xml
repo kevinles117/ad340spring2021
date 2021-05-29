@@ -13,4 +13,9 @@
     <string name="navigation_drawer_close">navigation drawer closed</string>
     <string name="like_button_string">Like</string>
     <string name="profile_picture_string">Profile Picture</string>
+    <string name="daily_matches_reminder_time">Daily Matches Reminder Time</string>
+    <string name="maximum_distance_search_in_miles">Maximum Distance Search (In Miles)</string>
+    <string name="gender">Gender</string>
+    <string name="account_privacy">Account Privacy</string>
+    <string name="interested_age_range">Interested Age Range</string>
 </resources>
