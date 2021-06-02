@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Calculates the age using a date and today's date
     public int getAge(int year, int month, int dayOfMonth) {
-        return Period.between(LocalDate.of(year, month, dayOfMonth), LocalDate.now()).getYears();
+        return Period.between(LocalDate.of(year, month+1, dayOfMonth), LocalDate.now()).getYears();
     }
 
 }
