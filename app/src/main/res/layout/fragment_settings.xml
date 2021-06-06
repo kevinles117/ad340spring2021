@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SignUpActivity">
 
     <TextView
-        android:id="@+id/reminder_time"
+        android:id="@+id/uid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/daily_matches_reminder_time"
         android:layout_marginTop="@dimen/marginScreenTop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -16,10 +17,19 @@
     </TextView>
 
     <TextView
+        android:id="@+id/reminder_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginScreenTop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/uid">
+    </TextView>
+
+    <TextView
         android:id="@+id/max_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/maximum_distance_search_in_miles"
         android:layout_marginTop="@dimen/settingsMarginTop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -30,7 +40,6 @@
         android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/gender"
         android:layout_marginTop="@dimen/settingsMarginTop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -41,7 +50,6 @@
         android:id="@+id/account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/account_privacy"
         android:layout_marginTop="@dimen/settingsMarginTop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -52,11 +60,30 @@
         android:id="@+id/age_range"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/interested_age_range"
         android:layout_marginTop="@dimen/settingsMarginTop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/account">>
     </TextView>
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/age_range"
+        android:text="@string/update_database" />
+<!--        android:onClick="updateDatabase"-->
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/update"
+        android:text="@string/delete_database"/>
+<!--        android:onClick="deleteSettings"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

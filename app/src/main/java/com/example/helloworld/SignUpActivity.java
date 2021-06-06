@@ -10,14 +10,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
 
 import com.example.helloworld.models.MatchesModel;
 import com.example.helloworld.viewmodels.MatchesViewModel;
+import com.example.helloworld.viewmodels.SettingsViewModel;
 import com.google.android.material.navigation.NavigationView;
 
 public class SignUpActivity extends AppCompatActivity implements MatchesFragment.OnListFragmentInteractionListener{
@@ -30,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity implements MatchesFragment
     private Toolbar toolbar;
     private NavigationView navigationView;
     private ActionBarDrawerToggle toggle;
-    private MatchesViewModel viewModel;
+    private MatchesViewModel matchesViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +105,7 @@ public class SignUpActivity extends AppCompatActivity implements MatchesFragment
     @Override
     public void onListFragmentInteraction(MatchesModel match) {
         match.liked = true;
-        viewModel.updateMatches(match);
+        this.matchesViewModel.updateMatches(match);
     }
 
     public static class Profile {
