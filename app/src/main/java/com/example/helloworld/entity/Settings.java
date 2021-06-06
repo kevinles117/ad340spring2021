@@ -1,21 +1,23 @@
 package com.example.helloworld.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.google.type.DateTime;
+import java.time.LocalTime;
 
 @Entity
 public class Settings {
     @PrimaryKey
-    private int id = 0;
+    @NonNull
+    private String uid = "";
 
     @ColumnInfo(name = "matches_reminder_time")
-    private DateTime date;
+    private long time;
 
     @ColumnInfo(name = "maximum_distance_search")
-    private int distance;
+    private double distance;
 
     @ColumnInfo(name = "gender")
     private String gender;
@@ -24,21 +26,25 @@ public class Settings {
     private Boolean privacy;
 
     @ColumnInfo(name = "interested_age_range")
-    private String ageRange;
+    private int ageRange;
 
-    public DateTime getDate() {
-        return date;
+    public String getUid() { return uid; }
+
+    public void setUid(String uid) {this.uid = uid; }
+
+    public long getTime() {
+        return time;
     }
 
-    public void setDate(DateTime date) {
-        this.date = date;
+    public void setTime(long time) {
+        this.time = time;
     }
 
-    public int getDistance() {
+    public double getDistance() {
         return distance;
     }
 
-    public void setDistance(int distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 
@@ -57,12 +63,12 @@ public class Settings {
     public void setPrivacy(Boolean privacy) {
         this.privacy = privacy;
     }
-
-    public String getAgeRange() {
+  
+    public int getAgeRange() {
         return ageRange;
     }
 
-    public void setAgeRange(String ageRange) {
+    public void setAgeRange(int ageRange) {
         this.ageRange = ageRange;
     }
 }
