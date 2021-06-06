@@ -5,8 +5,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.google.type.DateTime;
-
 import java.time.LocalTime;
 
 @Entity
@@ -65,7 +63,7 @@ public class Settings {
     public void setPrivacy(Boolean privacy) {
         this.privacy = privacy;
     }
-
+  
     public int getAgeRange() {
         return ageRange;
     }

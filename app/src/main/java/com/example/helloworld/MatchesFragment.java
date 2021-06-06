@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import android.content.Context;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,6 +24,7 @@ public class MatchesFragment extends Fragment {
     private ArrayList<MatchesModel> matches = new ArrayList<>();
     private OnListFragmentInteractionListener listener;
     private MatchesViewModel viewModel;
+    private LocationManager locationManager;
 
     public MatchesFragment() {
     }
@@ -35,6 +37,7 @@ public class MatchesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
+        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), colCount));
@@ -78,5 +81,9 @@ public class MatchesFragment extends Fragment {
 
     public interface OnListFragmentInteractionListener {
         void onListFragmentInteraction(MatchesModel matches);
+    }
+
+    private boolean isLocationEnabled() {
+        return locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 }
